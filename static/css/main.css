@@ -1,0 +1,21 @@
+body{
+    background-image: url('../images/bgd.jpeg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+col-md-4{
+    margin-left: 15cm;
+}
+.img-thumbnail{
+    padding: .25rem;
+    /* background-color: var(--bs-body-bg); */
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    max-width: 100%;
+    height: auto;
+    margin-top: 2.5cm;
+}
+p{
+    margin-left: 3cm;
+    color: white;
+}

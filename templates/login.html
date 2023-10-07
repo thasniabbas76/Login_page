@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="eng">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css" integrity="sha384-PRrgQVJ8NNHGieOA1grGdCTIt4h21CzJs6SnWH4YMQ6G5F5+IEzOHz67L4SQaF0o" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+
+    <title>Login</title>
+  </head>
+  <body>
+
+  <div class="container mt-3">
+  <div class="row">
+  <div class="col-md-6 ">
+  <img class="img-thumbnail" src="{%static 'images/logo.jpg' %}" alt="">
+  </div>
+  <div class="col-md-4">
+
+
+  <h2 class="text-white text-center mt-3">Login here</h2>
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+  {{message}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+<form action="/login"method="post">{% csrf_token %}
+<br></br>
+<label class="text-white mt-3">User Name</label>
+<div class="form-group">
+<input type="text" class="form-control" name="username" placeholder="User name" Required>
+</div>
+
+<label class="text-white mt-3">Password</label>
+<div class="form-group">
+<input type="text" class="form-control" name="pass1" placeholder="Password" Required>
+</div>
+
+<div class="d-grid gap-2 mt-3">
+  <button class="btn btn-primary" type="Submit">Login</button>
+  
+</div>
+</form>
+<br></br>
+<p> Not a User? <a href="/signup">Sign Up</a></p>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

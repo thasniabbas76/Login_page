@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Search{% endblock title %}
+{% block body %}
+<h1 style='color:white;'>Search customer</h1>
+
+<!-- Search Form -->
+<form action="{% url 'search' %}" method="get">
+    <input type="text" name="query" placeholder="Search users...">
+    <button type="submit">Search</button>
+</form>
+
+{% if users %}
+    <ul>
+        {% for user in users %}
+            <li style='color:white;'>{{ user }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No users found.</p>
+{% endif %}
+
+<a href="{% url 'search' %}">Back to Search</a>
+
+{% endblock body %}
